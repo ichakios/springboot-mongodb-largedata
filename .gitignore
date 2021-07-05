@@ -1,0 +1,7 @@
+.DS_Store
+.idea
+.mvn
+target
+accessing-data-mongodb-complete.iml
+mvnw
+mvnw.cmd

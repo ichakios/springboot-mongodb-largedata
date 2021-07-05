@@ -1,8 +1,6 @@
 # Spring - Mongo Large Data Example
 ## _Large Data Generator Built In_
 
-[![N|ICHAKIOS](https://cldup.com/dTxpPi9lDf.thumb.png)](https://ichakios.com)
-
 Pre-requisites.
 
 - Postman for testing.
