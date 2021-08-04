@@ -18,9 +18,8 @@ public class TagService {
         this.tagRepository = tagRepository;
     }
 
-    public Tag fetchByUserOrTag(String query) {
-        Optional<Tag> tagOp = tagRepository.findByUser(query);
-        return tagOp.get();
+    public Page<Tag> fetchByUserOrTag(String query, Pageable pageable) {
+        return tagRepository.findByUser(query, pageable);
     }
 
     public Long count() {

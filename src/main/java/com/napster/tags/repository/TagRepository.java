@@ -9,7 +9,7 @@ import java.util.Optional;
 
 public interface TagRepository  extends MongoRepository<Tag, String> {
 
-    Optional<Tag> findByUser(String user);
+    Page<Tag> findByUser(String user, Pageable pageable);
 
     Page<Tag> findByContentType(String contentType, Pageable pageable);
 }

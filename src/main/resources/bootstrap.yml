@@ -1,0 +1,4 @@
+spring:
+  cloud:
+    config:
+      uri: http://local.capital-banking.com:8764
