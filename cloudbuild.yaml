@@ -18,7 +18,5 @@ steps:
       - 'us-central1'
       - '--platform'
       - 'managed'
-      - 'port'
-      - '8080'
 images:
   - 'gcr.io/$PROJECT_ID/spring-mongodb:$COMMIT_SHA'
