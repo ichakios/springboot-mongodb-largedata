@@ -32,7 +32,7 @@ public class AccessingDataMongodbApplication{
 
 	@GetMapping("/hello")
 	public ResponseEntity<String> getHello(Model model) {
-		return new ResponseEntity<String>("abc = "+ env.getProperty("source.database.type"), HttpStatus.OK);
+		return new ResponseEntity<String>("abcd = "+ env.getProperty("source.database.type"), HttpStatus.OK);
 	}
 
 	@Autowired
