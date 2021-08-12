@@ -6,9 +6,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Optional;
-
 @Service
 public class TagService {
 
@@ -28,5 +25,10 @@ public class TagService {
 
     public Page<Tag> fetchByContentType(String query, Pageable pageable) {
         return tagRepository.findByContentType(query, pageable);
+    }
+
+    public Tag createATag(Tag tag) {
+
+        return tagRepository.save(tag);
     }
 }

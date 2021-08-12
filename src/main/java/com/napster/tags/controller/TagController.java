@@ -45,6 +45,11 @@ public class TagController {
         return ResponseEntity.ok(tagService.fetchByUserOrTag(query,pageable));
     }
 
+    @PostMapping()
+    @ResponseBody
+    public ResponseEntity<Tag> createATag(@RequestBody Tag tag) {
+        return ResponseEntity.ok(tagService.createATag(tag));
+    }
 
     @GetMapping("/count")
     @ResponseBody
