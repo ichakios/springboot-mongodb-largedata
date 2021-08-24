@@ -45,10 +45,24 @@ public class TagController {
         return ResponseEntity.ok(tagService.fetchByUserOrTag(query,pageable));
     }
 
-    @PostMapping()
+    @PostMapping("/favorite")
     @ResponseBody
     public ResponseEntity<Tag> createATag(@RequestBody Tag tag) {
+        tag.setTag("Favorite");
         return ResponseEntity.ok(tagService.createATag(tag));
+    }
+
+
+    @DeleteMapping("/unFavorite/{tagId}")
+    @ResponseBody
+    public ResponseEntity unFavorite(@PathVariable  String tagId) {
+        boolean isRemoved = tagService.removeTag(tagId);
+
+        if (!isRemoved) {
+            return new ResponseEntity(HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity(tagId, HttpStatus.OK);
     }
 
     @GetMapping("/count")

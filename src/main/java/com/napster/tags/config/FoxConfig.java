@@ -21,6 +21,7 @@ public class FoxConfig {
                 .apiInfo(apiInfo())
                 .select()
                 .apis(RequestHandlerSelectors.any())
+                .apis( RequestHandlerSelectors.basePackage( "com.napster.tags.controller" ) )
                 .paths(PathSelectors.any())
                 .build();
     }

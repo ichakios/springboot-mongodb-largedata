@@ -6,6 +6,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class TagService {
 
@@ -30,5 +32,15 @@ public class TagService {
     public Tag createATag(Tag tag) {
 
         return tagRepository.save(tag);
+    }
+
+    public boolean removeTag(String tagId) {
+        Optional<Tag> tagOp = tagRepository.findById(tagId);
+        if (tagOp.isPresent()){
+            tagRepository.delete(tagOp.get());
+            return true;
+        }else {
+            return false;
+        }
     }
 }
